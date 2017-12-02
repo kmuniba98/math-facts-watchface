@@ -1,0 +1,21 @@
+{
+    "author": "mkhan@rollins.edu",
+    "dependencies": {},
+    "keywords": [],
+    "name": "math-facts-watchface",
+    "pebble": {
+        "displayName": "Math Facts Watchface",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "rocky",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "uuid": "5f638bb1-d62f-4e8d-87fc-93a24e373125",
+        "watchapp": {
+            "watchface": false
+        }
+    },
+    "version": "1.0.0"
+}
