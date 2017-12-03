@@ -4,17 +4,6 @@ var rocky = require('rocky');
 // Global object to store fact string
 var factString;
 
-/*
-function fibonacci(n) {
-  if (n < 2){
-     return 1;
-   }else{
-     return fibonacci(n-2) + fibonacci(n-1);
-   }
-}
-*/
-
-
 function drawSpiral(ctx, xVal, yVal){
   
   var x = xVal; 
@@ -88,7 +77,7 @@ rocky.on('draw', function(event) {
 	ctx.fillStyle = 'white';
 	ctx.textAlign = 'center';
 	ctx.font = '32px bold numbers Leco-numbers';
-  ctx.fillText(dateString, width/2, 0, width);
+  ctx.fillText(dateString, width/2, 10, width);
 
   // Draw fact
   if (factString) {
