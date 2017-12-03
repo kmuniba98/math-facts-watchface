@@ -21,11 +21,19 @@ function drawSpiral(ctx, xVal, yVal){
   var y = yVal;
   ctx.strokeStyle = 'red';
   
-  ctx.strokeRect(x, y, (1*20), (1*20));
-  ctx.strokeRect(x, y + (1*20), (1*20), (1*20));
-  ctx.strokeRect(x + (1*20), y, (2*20), (2*20));
-  //ctx.strokeRect(x, y + (1*20), (3*20), (3*20));
-  //ctx.strokeRect(x - fibonacci(5), y + fibonacci(4), fibonacci(5), fibonacci(5));
+  ctx.strokeRect(x, y + (1*20), (1*20), (1*20)); // 2
+    
+  ctx.strokeRect(x, y, (1*20), (1*20)); // 1
+  ctx.beginPath();
+  ctx.arc(x + (1*20), y - (1*20), (1*20), 0, (0.5*Math.PI), true);
+  ctx.stroke();
+  
+  ctx.strokeRect(x + (1*20), y, (2*20), (2*20)); // 3
+  ctx.strokeRect(x, y + (2*20), (3*20), (3*20)); // 4
+  ctx.strokeRect(x - (5*20), y, (5*20), (5*20)); // 5
+  ctx.strokeRect(x - (5*20), y - (3*20), (8*20), (8*20)); // 6
+  ctx.strokeRect(x + (3*20), y - (8*20), (13*20), (13*20));
+  //ctx.strokeRect();
   
 	
 	return;
@@ -66,7 +74,7 @@ rocky.on('draw', function(event) {
   ctx.clearRect(0, 0, width, height);
 
 	// Draw fibb spiral
-	drawSpiral(ctx, width/2, height/2);
+	drawSpiral(ctx, width/2, height/2 - 30);
 	
 	// Draw time
 	var d = new Date();
