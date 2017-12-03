@@ -8,14 +8,12 @@ function drawSpiral(ctx, xVal, yVal){
   
   var x = xVal; 
   var y = yVal;
-  ctx.strokeStyle = 'red';
+  ctx.strokeStyle = 'red';  
   
-  ctx.strokeRect(x, y + (1*20), (1*20), (1*20)); // 2
-    
-  ctx.strokeRect(x, y, (1*20), (1*20)); // 1
-  ctx.beginPath();
-  ctx.arc(x + (1*20), y - (1*20), (1*20), 0, (0.5*Math.PI), true);
-  ctx.stroke();
+  ctx.strokeRect(x, y + (1*20), (1*20), (1*20)); // 1
+  
+  
+  ctx.strokeRect(x, y, (1*20), (1*20)); // 2
   
   ctx.strokeRect(x + (1*20), y, (2*20), (2*20)); // 3
   ctx.strokeRect(x, y + (2*20), (3*20), (3*20)); // 4
@@ -23,6 +21,10 @@ function drawSpiral(ctx, xVal, yVal){
   ctx.strokeRect(x - (5*20), y - (3*20), (8*20), (8*20)); // 6
   ctx.strokeRect(x + (3*20), y - (8*20), (13*20), (13*20));
   //ctx.strokeRect();
+    
+  ctx.beginPath();
+  ctx.arc(x + (1*20), y, (1*20), Math.PI, (0.5*Math.PI), false);
+  ctx.stroke();
   
 	
 	return;
@@ -86,6 +88,6 @@ rocky.on('draw', function(event) {
       ctx.textAlign = 'center';
       ctx.font = '18px Gothic';
 		
-      ctx.fillText(factString, width/2, height*(1/3), width); // text is centered around the x-coordinate
+      //ctx.fillText(factString, width/2, height*(1/3), width); // text is centered around the x-coordinate
   }
 });
