@@ -41,6 +41,11 @@ rocky.on('draw', function(event) {
       ctx.fillStyle = 'lightgray';
       ctx.textAlign = 'center';
       ctx.font = '14px Gothic';
-      ctx.fillText(factString, ctx.canvas.unobstructedWidth / 2, 4);
+    
+      
+     var formattedString = factString.substring(0,factString.length/2) + '\n'
+                                                + factString.substring(factString.length/2 + 1, factString.length);
+      ctx.fillText(factString, 80, 0, 144);
+      //ctx.fillText(formattedString, ctx.canvas.unobstructedWidth / 2, 4);
   }
 });
