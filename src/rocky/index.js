@@ -21,11 +21,12 @@ function drawSpiral(ctx, xVal, yVal){
   ctx.strokeRect(x - (5*20), y - (3*20), (8*20), (8*20)); // 6
   ctx.strokeRect(x + (3*20), y - (8*20), (13*20), (13*20));
   //ctx.strokeRect();
-    
+  
+  /*
   ctx.beginPath();
   ctx.arc(x + (1*20), y, (1*20), Math.PI, (0.5*Math.PI), false);
   ctx.stroke();
-  
+  */
 	
 	return;
 }
@@ -63,6 +64,8 @@ rocky.on('draw', function(event) {
 	var width = ctx.canvas.clientWidth;
 	var height =  ctx.canvas.clientHeight;
   ctx.clearRect(0, 0, width, height);
+  ctx.fillStyle = 'white';
+  ctx.fillRect(0, 0, width, height);
 
 	// Draw fibb spiral
 	drawSpiral(ctx, width/2, height/2 - 30);
@@ -76,7 +79,7 @@ rocky.on('draw', function(event) {
 	}
 	
 	var dateString = hour + ":" + minute;
-	ctx.fillStyle = 'white';
+	ctx.fillStyle = 'black';
 	ctx.textAlign = 'center';
 	ctx.font = '32px bold numbers Leco-numbers';
   ctx.fillText(dateString, width/2, 10, width);
@@ -84,10 +87,10 @@ rocky.on('draw', function(event) {
   // Draw fact
   if (factString) {
       // Draw the text, top center
-      ctx.fillStyle = 'white';
+      ctx.fillStyle = 'black';
       ctx.textAlign = 'center';
       ctx.font = '18px Gothic';
 		
-      //ctx.fillText(factString, width/2, height*(1/3), width); // text is centered around the x-coordinate
+      ctx.fillText(factString, width/2, height*(1/3), width); // text is centered around the x-coordinate
   }
 });
