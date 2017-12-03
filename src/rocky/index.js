@@ -5,25 +5,32 @@ var rocky = require('rocky');
 var factString;
 
 /*
-function drawFibb(ctx, screenHeight, screenWidth){
-	var newFib = 1 * 15;
-	
-	ctx.strokeStyle = 'blue';
-	
-	// rect 1
-	ctx.strokeRect(screenWidth/2, screenHeight/2, newFib, newFib);
-	val oldFib = 1;
-	
-	// rect 2
-	ctx.strokeRect(screenWidth/2 - newFib, screenHeight/2, newFib, newFib);
-	
-	// rect 3
-	fibbVal = 2 * 15;
-	ctx.strokeRect(screenWidth/2 - fibbVal)
+function fibonacci(n) {
+  if (n < 2){
+     return 1;
+   }else{
+     return fibonacci(n-2) + fibonacci(n-1);
+   }
+}
+*/
+
+
+function drawSpiral(ctx, xVal, yVal){
+  
+  var x = xVal; 
+  var y = yVal;
+  ctx.strokeStyle = 'red';
+  
+  ctx.strokeRect(x, y, (1*20), (1*20));
+  ctx.strokeRect(x, y + (1*20), (1*20), (1*20));
+  ctx.strokeRect(x + (1*20), y, (2*20), (2*20));
+  //ctx.strokeRect(x, y + (1*20), (3*20), (3*20));
+  //ctx.strokeRect(x - fibonacci(5), y + fibonacci(4), fibonacci(5), fibonacci(5));
+  
 	
 	return;
 }
-*/
+
 
 rocky.on('minutechange', function(event) {
   // get string parameter
@@ -54,13 +61,12 @@ rocky.on('message', function(event) {
 rocky.on('draw', function(event) {
   var ctx = event.context;
   // Clear the screen
-	ctx.fillStyle = 'blue';
 	var width = ctx.canvas.clientWidth;
 	var height =  ctx.canvas.clientHeight;
   ctx.clearRect(0, 0, width, height);
 
 	// Draw fibb spiral
-	//drawFibb(ctx, height, width);
+	drawSpiral(ctx, width/2, height/2);
 	
 	// Draw time
 	var d = new Date();
