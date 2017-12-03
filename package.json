@@ -1,8 +1,8 @@
 {
-    "author": "mkhan@rollins.edu",
+    "author": "Muniba Khan",
     "dependencies": {},
     "keywords": [],
-    "name": "math-facts-watchface",
+    "name": "math-facts",
     "pebble": {
         "displayName": "Math Facts Watchface",
         "enableMultiJS": true,
@@ -12,9 +12,13 @@
             "media": []
         },
         "sdkVersion": "3",
+        "targetPlatforms": [
+            "basalt",
+            "chalk"
+        ],
         "uuid": "5f638bb1-d62f-4e8d-87fc-93a24e373125",
         "watchapp": {
-            "watchface": false
+            "watchface": true
         }
     },
     "version": "1.0.0"

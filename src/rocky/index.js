@@ -64,11 +64,11 @@ rocky.on('draw', function(event) {
 	var width = ctx.canvas.clientWidth;
 	var height =  ctx.canvas.clientHeight;
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = 'white';
-  ctx.fillRect(0, 0, width, height);
+  //ctx.fillStyle = 'white';
+  //ctx.fillRect(0, 0, width, height);
 
 	// Draw fibb spiral
-	drawSpiral(ctx, width/2, height/2 - 30);
+	//drawSpiral(ctx, width/2, height/2 - 30);
 	
 	// Draw time
 	var d = new Date();
@@ -78,19 +78,21 @@ rocky.on('draw', function(event) {
 		minute = "0" + minute;
 	}
 	
-	var dateString = hour + ":" + minute;
-	ctx.fillStyle = 'black';
-	ctx.textAlign = 'center';
-	ctx.font = '32px bold numbers Leco-numbers';
-  ctx.fillText(dateString, width/2, 10, width);
+  if(rocky.watchInfo.platform == "basalt"){
+	  var dateString = hour + ":" + minute;
+	  ctx.fillStyle = 'green';
+	  ctx.textAlign = 'center';
+	  ctx.font = '32px bold numbers Leco-numbers';
+    ctx.fillText(dateString, width/2, 10, width);
 
-  // Draw fact
-  if (factString) {
+    // Draw fact
+    if (factString) {
       // Draw the text, top center
-      ctx.fillStyle = 'black';
+      ctx.fillStyle = 'green';
       ctx.textAlign = 'center';
       ctx.font = '18px Gothic';
 		
       ctx.fillText(factString, width/2, height*(1/3), width); // text is centered around the x-coordinate
+    }
   }
 });
